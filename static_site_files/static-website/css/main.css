@@ -1,4 +1,19 @@
- */
+ /* Styles for website counter container */
+.website-counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #66b0ff;
+  height: 50px;
+  width: 80px;
+  color: white;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 25px;
+  margin-top: 10px;
+}
+
 .bootstrap-switch {
   display: inline-block;
   direction: ltr;
@@ -5251,3 +5266,4 @@ a.credit {
 #contactform {
   color: white;
 }
+
