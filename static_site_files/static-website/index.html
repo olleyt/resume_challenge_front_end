@@ -12,6 +12,7 @@
   <link href="css/aos.css?ver=1.1.0" rel="stylesheet">
   <link href="css/bootstrap.min.css?ver=1.1.0" rel="stylesheet">
   <link href="css/main.css?ver=1.1.0" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="scripts/main.js"></script>
   <noscript>
     <style type="text/css">
@@ -464,13 +465,9 @@
                   var counterContainer = document.querySelector("div.btn-info");
                   console.log("Located: " + counterContainer);
                   counterContainer.innerHTML = json.response.count;
-                  
-                  document.getElementById("result-visitor-count").innerText = 
-                    json.response.count;
                 })
                 .catch((error) => {
-                  document.getElementById("result-visitor-count").innerText =
-                    error;
+                  counterContainer.innerHTML = error;
                 });     
 
         </script>
