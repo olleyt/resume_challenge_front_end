@@ -24,7 +24,7 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-region: $env_region
+          aws-region: ${{ vars.REGION }}
           role-to-assume: ${{ secrets.TEST_DEPLOY_ROLE }}
           role-session-name: OIDCSession
  
