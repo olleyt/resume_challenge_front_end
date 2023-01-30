@@ -28,5 +28,5 @@ jobs:
           role-to-assume: ${{ secrets.TEST_DEPLOY_ROLE }}
           role-session-name: OIDCSession
  
-      - run: aws s3 sync ./static_site_files/static-website/* ${{ secrets.S3_BUCKET }}
+      - run: aws s3 sync ./static_site_files/static-website/ ${{ secrets.S3_BUCKET }}
         shell: bash
