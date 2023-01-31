@@ -31,7 +31,5 @@ jobs:
       - run: aws s3 sync ./static_site_files/static-website/ ${{ secrets.S3_BUCKET }}
         shell: bash
 
-      - run: aws cloudfront create-invalidation \
-              --distribution-id ${{ secrets.CF_DISTRIBUTION }} \
-              --paths ${{ vars.CF_PATHS }}
-  
+      - run: aws cloudfront create-invalidation  --distribution-id ${{ secrets.CF_DISTRIBUTION }} --paths ${{ vars.CF_PATHS }}
+        shell: bash
