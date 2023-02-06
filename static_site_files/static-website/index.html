@@ -463,10 +463,11 @@
                 .then((response) => {
                   message = JSON.stringify({response})
                   json = JSON.parse(message);
+                  count = json.response.count;
                   // print total number of visitors in the footer of the site
                   var counterContainer = document.querySelector("div.btn-info");
                   console.log("Located: " + counterContainer);
-                  counterContainer.innerHTML = "<%=ESAPI.encoder().encodeForJavascript(ESAPI.encoder().encodeForHTML(json.response.count))%>";
+                  counterContainer.innerHTML = "<%=ESAPI.encoder().encodeForJavascript(ESAPI.encoder().encodeForHTML(count))%>";
                 })
                 .catch((error) => {
                   counterContainer.innerHTML = "<%=ESAPI.encoder().encodeForJavascript(ESAPI.encoder().encodeForHTML(error))%>";;
