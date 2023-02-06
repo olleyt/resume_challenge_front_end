@@ -442,7 +442,7 @@
   <div class="content-center">
     <div class="h5" style="text-align:center"> Website visit count: 
         <script>
-          var ESAPI = require('node-esapi');
+          //var ESAPI = require('node-esapi');
           // Use your API endpoint URL you copied from the previous step
           //const counter_endpoint = "https://2xlnmnxgi9.execute-api.us-east-1.amazonaws.com/default/update-visitor-counter";
           // const counter_endpoint =" https://ldkt03gfk0.execute-api.us-east-1.amazonaws.com/test/helloworld"
@@ -464,12 +464,14 @@
                   json = JSON.parse(message);
                   count = json.response.count;
                   // print total number of visitors in the footer of the site
-                  var counterContainer = document.querySelector("div.btn-info");
+                  var counterLabel = document.querySelector("badge badge-info");
                   console.log("Located: " + counterContainer);
-                  counterContainer.innerHTML = "<%=ESAPI.encoder().encodeForJavascript(ESAPI.encoder().encodeForHTML(count))%>";
+                  counterLabel.textContent = text(count);
+                  //"<%=ESAPI.encoder().encodeForJavascript(ESAPI.encoder().encodeForHTML(count))%>";
                 })
                 .catch((error) => {
-                  counterContainer.innerHTML = "<%=ESAPI.encoder().encodeForJavascript(ESAPI.encoder().encodeForHTML(error))%>";;
+                  counterContainer.innerHTML = text(error)
+                  //"<%=ESAPI.encoder().encodeForJavascript(ESAPI.encoder().encodeForHTML(error))%>";;
                 });     
 
         </script>
