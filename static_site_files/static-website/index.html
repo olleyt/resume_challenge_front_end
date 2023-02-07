@@ -440,7 +440,8 @@
 <!-- visitor counter implementation-->
 <div class="container">
   <div class="content-center">
-    <div class="h5" style="text-align:center"> Website visit count: 
+    <div class="h5" style="text-align:center"> Website visit count:
+      <span class="badge badge-info"></span> 
         <script>
           //var ESAPI = require('node-esapi');
           // Use your API endpoint URL you copied from the previous step
@@ -471,12 +472,12 @@
                 })
                 .catch((error) => {
                   console.log(error);
-                  counterLabel.textContent = error;
+                  //counterLabel.textContent = error;
                   //"<%=ESAPI.encoder().encodeForJavascript(ESAPI.encoder().encodeForHTML(error))%>";;
                 });     
 
         </script>
-        <span class="badge badge-info">Info</span>  
+          
     </div>
   </div> 
 </div>     
