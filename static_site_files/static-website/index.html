@@ -453,7 +453,7 @@
                 method: "POST",
                 body
               }; 
-
+          var counterLabel = document.querySelector("badge badge-info");
           fetch(counter_endpoint, counterRequestOptions)
                 .then((response) => {
                   if (!response.ok) throw new Error("Error in fetch for visitor counter");
@@ -464,7 +464,7 @@
                   json = JSON.parse(message);
                   count = json.response.count;
                   // print total number of visitors in the footer of the site
-                  var counterLabel = document.querySelector("badge badge-info");
+                  
                   console.log("Located: " + counterContainer);
                   counterLabel.textContent = text(count);
                   //"<%=ESAPI.encoder().encodeForJavascript(ESAPI.encoder().encodeForHTML(count))%>";
