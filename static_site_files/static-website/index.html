@@ -466,7 +466,7 @@
                   count = json.response.count;
                   // print total number of visitors in the footer of the site
                   var counterLabel = document.querySelector("badge badge-info");
-                  counterLabel.textContent = text(count);
+                  counterLabel.textContent = count;
                   //"<%=ESAPI.encoder().encodeForJavascript(ESAPI.encoder().encodeForHTML(count))%>";
                 })
                 .catch((error) => {
