@@ -463,10 +463,10 @@
                 .then((response) => {
                   message = JSON.stringify({response})
                   json = JSON.parse(message);
-                  count = json.response.count;
+                  //count = json.response.count;
                   // print total number of visitors in the footer of the site
                   var counterLabel = document.querySelector("badge badge-info");
-                  counterLabel.textContent = count;
+                  counterLabel.textContent = json.response.count;
                   //"<%=ESAPI.encoder().encodeForJavascript(ESAPI.encoder().encodeForHTML(count))%>";
                 })
                 .catch((error) => {
