@@ -470,7 +470,7 @@
                   //"<%=ESAPI.encoder().encodeForJavascript(ESAPI.encoder().encodeForHTML(count))%>";
                 })
                 .catch((error) => {
-                  counterLabel.textContent = text(error)
+                  counterLabel.textContent = $(counterLabel).text(error);
                   //"<%=ESAPI.encoder().encodeForJavascript(ESAPI.encoder().encodeForHTML(error))%>";;
                 });     
 
