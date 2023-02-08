@@ -33,3 +33,14 @@ jobs:
 
       - run: aws cloudfront create-invalidation  --distribution-id ${{ secrets.CF_DISTRIBUTION }} --paths ${{ vars.CF_PATHS }}
         shell: bash
+
+  run-e2e-test:
+    runs-on: ubuntu-latest
+    environment: Test
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - uses: cypress-io/github-action@v5
+        with:
+          browser: chrome      
+          
