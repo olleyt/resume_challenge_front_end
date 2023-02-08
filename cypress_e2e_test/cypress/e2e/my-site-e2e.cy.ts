@@ -8,7 +8,7 @@ describe('Visitor Counter Test', () => {
         startingValue = parseInt($label.text())
       })
     })
-    it('checks the value of the button info element', () => {
+    it('checks the value of the visitor counter', () => {
       cy.visit('https://test.coolarchitect.link/')
       cy.wait(3000) // wait for 3 seconds
       cy.get('@counterContainer').then(($label) => {
