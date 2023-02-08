@@ -37,6 +37,7 @@ jobs:
   run-e2e-test:
     runs-on: ubuntu-latest
     environment: Test
+    needs: deploy-test
     steps:
       - name: Checkout
         uses: actions/checkout@v3
