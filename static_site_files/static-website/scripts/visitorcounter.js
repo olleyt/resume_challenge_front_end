@@ -8,8 +8,8 @@ $(document).ready(function() {
         }; 
 
     var counterLabel = $(".badge.badge-info");
-    console.log('counterLabel', counterLabel[0], json.response.count)
-    counterLabel[0].textContent = "Loading...";
+    //console.log('counterLabel', counterLabel[0], json.response.count)
+    //counterLabel[0].textContent = "Loading...";
 
     // fetch the total number of visitors
     fetch(counter_endpoint, counterRequestOptions)
