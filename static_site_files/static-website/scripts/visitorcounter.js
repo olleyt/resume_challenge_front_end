@@ -21,9 +21,6 @@ $(document).ready(function() {
             message = JSON.stringify({response})
             json = JSON.parse(message);
             console.log('counter response', json.response.count);
-            // print total number of visitors in the footer of the site
-            //var counterLabel = $(document).querySelectorAll(".badge.badge-info");
-            //console.log('counterLabel', counterLabel[0], json.response.count)
             counterLabel[0].textContent = json.response.count;
         })
         .catch((error) => {
