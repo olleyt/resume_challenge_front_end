@@ -14,7 +14,7 @@
   <link href="css/main.css?ver=1.1.0" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="scripts/main.js"></script>
-  <script src="scripts/visitorcounter.js"></script>
+  
   <noscript>
     <style type="text/css">
       [data-aos] {
@@ -409,35 +409,7 @@
   <div class="content-center">
     <div class="h5" style="text-align:center"> Website visit count:
       <span class="badge badge-info"></span> 
-        <script>
-          const counter_endpoint ="https://hpb5sqhd88.execute-api.us-east-1.amazonaws.com/testing/visitorcounter"
-          // We use JSON.stringify here so the data can be sent as a string via HTTP
-          const body = JSON.stringify({});
-          const counterRequestOptions = {
-                method: "POST",
-                body
-              }; 
-          
-          fetch(counter_endpoint, counterRequestOptions)
-                .then((response) => {
-                  if (!response.ok) throw new Error("Error in fetch for visitor counter");
-                  return response.json();
-                })
-                .then((response) => {
-                  message = JSON.stringify({response})
-                  json = JSON.parse(message);
-                  // print total number of visitors in the footer of the site
-                  var counterLabel = document.querySelectorAll(".badge.badge-info");
-                  console.log('counterLabel', counterLabel[0], json.response.count)
-                  counterLabel[0].textContent = json.response.count;
-                })
-                .catch((error) => {
-                  console.log(error);
-                  counterLabel[0].textContent = error;
-                });     
-
-        </script>
-          
+      <script src="scripts/visitorcounter.js"></script>    
     </div>
   </div> 
 </div>     
