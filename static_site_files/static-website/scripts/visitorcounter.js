@@ -6,6 +6,11 @@ const counterRequestOptions = {
       body
     }; 
 
+var counterLabel = document.querySelectorAll(".badge.badge-info");
+console.log('counterLabel', counterLabel[0], json.response.count)
+counterLabel[0].textContent = "Loading...";
+
+// fetch the total number of visitors
 fetch(counter_endpoint, counterRequestOptions)
       .then((response) => {
         if (!response.ok) throw new Error("Error in fetch for visitor counter");
@@ -14,9 +19,10 @@ fetch(counter_endpoint, counterRequestOptions)
       .then((response) => {
         message = JSON.stringify({response})
         json = JSON.parse(message);
+        console.log('counter response', json.response.count);
         // print total number of visitors in the footer of the site
-        var counterLabel = $(document).querySelectorAll(".badge.badge-info");
-        console.log('counterLabel', counterLabel[0], json.response.count)
+        //var counterLabel = $(document).querySelectorAll(".badge.badge-info");
+        //console.log('counterLabel', counterLabel[0], json.response.count)
         counterLabel[0].textContent = json.response.count;
       })
       .catch((error) => {
